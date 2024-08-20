@@ -1,46 +1,31 @@
-// numbers
-// fn main() {
-//     let x: i32 = 5;
-//     let y: u32 = 1000;
-//     let z: f32 = 1000.001;
-
-//     print!("x:{}, y:{}, z:{}", x, y, z);
-// }
-
-// boolean
-// fn main() {
-//     let is_male: bool = false;
-//     let is_above_18: bool = true;
-
-//     if is_male {
-//         print!("you are a male");
-//     } else {
-//         print!("You are not a male");
-//     }
-
-//     if is_male && is_above_18 {
-//         print!("You are a legal male");
-//     }
-// }
-
-// fn main() {
-//     let is_male: bool = false;
-//     let is_above_18: bool = true;
-
-//     if is_male {
-//         print!("you are a male");
-//     } else {
-//         print!("You are not a male");
-//     }
-
-//     if is_male && is_above_18 {
-//         print!("You are a legal male");
-//     }
-// }
-
-// string
 fn main() {
-    let x = String::from("my name is vikrant"); 
-    let char1 = x.chars().nth(10);
-    print!("{}",char1.unwrap());
+    let x = five();
+    let y = plus_one(10);
+    println!("value is x : {x} , y :{y}");
+    
+
+}
+
+// Parameters
+fn another_function(x: i32, unit_label: char) {
+    println!("Another function parameter {x},{unit_label}");
+}
+
+// expression and statements
+
+fn sub_main() {
+    let y:i32 = {
+        let x:i32 = 6;
+        x + 1
+    };
+    println!("The value of y is:{y}");
+}
+
+// Functions with Return Values
+fn five() -> i32 {
+    5
+}
+
+fn plus_one(x:i32)->i32{
+    x+1
 }
