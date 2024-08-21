@@ -1,46 +1,63 @@
-// numbers
-// fn main() {
-//     let x: i32 = 5;
-//     let y: u32 = 1000;
-//     let z: f32 = 1000.001;
+fn main(){
+    first_program();
+    check_bool();
+    multiple_condition(7);
+    handle_if_in_let();
+    handle_if_in_let_mismatch_type();
+}
 
-//     print!("x:{}, y:{}, z:{}", x, y, z);
-// }
 
-// boolean
-// fn main() {
-//     let is_male: bool = false;
-//     let is_above_18: bool = true;
+// if else condition
 
-//     if is_male {
-//         print!("you are a male");
-//     } else {
-//         print!("You are not a male");
-//     }
+fn first_program(){
+    let number = 7;
+    
+    if number < 5 {
+        println!("Yes condition is true");
 
-//     if is_male && is_above_18 {
-//         print!("You are a legal male");
-//     }
-// }
+    }else{
+        println!("Yes condition is false");
+    }
+}
 
-// fn main() {
-//     let is_male: bool = false;
-//     let is_above_18: bool = true;
+// condition must be a bool value
+fn check_bool(){
+    let number :i32 = 10;
+    if number == 2 {
+        println!("In a if condition");
+    }
+}
 
-//     if is_male {
-//         print!("you are a male");
-//     } else {
-//         print!("You are not a male");
-//     }
+//Handling Multiple Conditions with else if
 
-//     if is_male && is_above_18 {
-//         print!("You are a legal male");
-//     }
-// }
+fn multiple_condition(number:i32){
+    if number % 4 == 0 {
+        println!("Number is divisible by 4");
+    }else if number % 3 == 0 {
+        println!("Number is divisible by 3");
+    }else if number % 2 == 0 {
+        println!("Number is divisible by 2");
+    }else{
+        println!("Number is not divisible by 2 , 3 ,4");
 
-// string
-fn main() {
-    let x = String::from("my name is vikrant"); 
-    let char1 = x.chars().nth(10);
-    print!("{}",char1.unwrap());
+    }
+
+}
+
+// Using if in a let Statement
+
+fn handle_if_in_let(){
+    let a:i32 = 5;
+    let number :i32 =  if a < 4 {10} else {a};
+    println!("You number is {number}");
+}
+
+// Using if in a let Statement 
+// types are mismatched
+fn handle_if_in_let_mismatch_type(){
+    let a:i32 = 5;
+    let result =  if a < 4 {"Yes"} else {1};
+    //  get error -> expected `&str`, found integer
+
+    println!("You result is {result}");
 }
